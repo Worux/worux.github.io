@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background-color: black;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var userLang = navigator.language || navigator.userLanguage; 
+            if (userLang.startsWith('tr')) {
+                window.location.href = 'tr/';
+            } else {
+                window.location.href = 'en/index.html';
+            }
+        });
+    </script>
+</head>
+<body>
+    <p>...</p>
+</body>
+</html>
