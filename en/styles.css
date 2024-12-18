@@ -1,0 +1,81 @@
+/* Sayfa genel stil ayarları */
+body {
+    background-color: #000; /* Arka plan rengi siyah */
+    color: #fff; /* Yazı rengi beyaz */
+    font-family: Arial, sans-serif; /* Yazı tipi */
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Container sınıfı, içeriği merkezler */
+.container {
+    max-width: 600px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Yarı şeffaf siyah arka plan */
+    border-radius: 10px;
+}
+
+/* Başlık stil ayarları */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* Paragraf stil ayarları */
+p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+/* Liste stil ayarları */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+li {
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+
+/* Sosyal medya bağlantıları */
+.social-links {
+    margin-top: 20px;
+}
+
+/* Her bir sosyal medya öğesinin stili */
+.social-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* Sosyal medya ikonları */
+.social-icon {
+    width: 30px; /* İkon boyutu */
+    height: 30px; /* İkon boyutu */
+    margin-right: 15px;
+}
+
+/* Kullanıcı adı stil */
+.social-username {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+/* Bağlantı hover efekti */
+.social-item:hover .social-username {
+    text-decoration: underline;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
