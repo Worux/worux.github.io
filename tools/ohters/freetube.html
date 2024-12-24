@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SiberWorld</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+    <header>
+        <a href="../"><div class="logo">Siber<span>World</span></div></a>
+        <nav>
+            <ul>
+                <li><a href="../">Araçlar</a></li>
+                <li><a href="../index.html#about">Hakkında</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>FreeTube</h1>
+    </section>
+
+    <section class="tools">
+        <input type="text" id="link" placeholder="Youtube linkini buraya yapıştırın">
+
+        <br>
+
+        <button onclick="fix_link()">Videoyu Göster</button>
+        
+        <br>
+
+        <iframe id="video" src="" frameborder="0" allowfullscreen></iframe>
+
+        <p>Youtube linkini alıp kutuya yapıştırın. Sonra Videoyu Göster diyerekten videoyu açabilirsiniz.</p>
+
+        <a class="btn_go" href="../">Geri Dön</a>
+    </section>
+
+    <footer>
+        <p>2024 SiberWorld.</p>
+    </footer>
+
+    <script>
+        function fix_link() {
+            var link = document.getElementById("link").value;
+            
+            var link2 = link.replace(/ /gi, "");
+            var video_id = link.replace("https://www.youtube.com/watch?v=", "");
+            video_id = video_id.replace("https://youtu.be/", "");
+            //video_id = video_id.replace("&feature=emb_rel_pause", "");
+            video_id = video_id.replace("&embeds_euri=https%3A%2F%2Fcdpn.io%2F&feature=emb_rel_end", "");
+            var final_link = "https://www.youtube-nocookie.com/embed/" + video_id;
+            final_link = final_link.replace("&feature=emb_rel_end", "");
+            document.getElementById("video").src = final_link;
+            document.getElementById("video").style.border = "1px solid white";
+        }
+    </script>
+</body>
+</html>
