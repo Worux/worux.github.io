@@ -86,5 +86,29 @@
     <footer>
         <p>2024 SiberWorld.</p>
     </footer>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const body = document.querySelector("body");
+    
+            function createSnowflake() {
+                const snowflake = document.createElement("div");
+                snowflake.classList.add("snowflake");
+                snowflake.textContent = "❄";
+                snowflake.style.left = Math.random() * window.innerWidth + "px";
+                snowflake.style.animationDuration = Math.random() * 3 + 2 + "s"; // 2-5 saniye
+                snowflake.style.fontSize = Math.random() * 10 + 10 + "px"; // 10-20px
+                body.appendChild(snowflake);
+    
+                // Kar tanesi animasyonu tamamlandığında sil
+                setTimeout(() => {
+                    snowflake.remove();
+                }, 5000);
+            }
+    
+            setInterval(createSnowflake, 200); // Her 200ms'de bir kar tanesi oluştur
+        });
+    </script>
+    
 </body>
 </html>
