@@ -90,6 +90,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const body = document.querySelector("body");
+            const tools = document.querySelectorAll(".tool");
     
             function createSnowflake() {
                 const snowflake = document.createElement("div");
@@ -107,8 +108,17 @@
             }
     
             setInterval(createSnowflake, 200); // Her 200ms'de bir kar tanesi oluştur
+    
+            // Kar birikimi efektini kutulara ekle
+            tools.forEach(tool => {
+                setInterval(() => {
+                    const newBackgroundSize = parseFloat(getComputedStyle(tool).backgroundSize.split(" ")[1]) + 2;
+                    tool.style.backgroundSize = `100% ${Math.min(newBackgroundSize, 80)}%`; // %80'e kadar büyür
+                }, 1000);
+            });
         });
     </script>
+    
     
 </body>
 </html>
