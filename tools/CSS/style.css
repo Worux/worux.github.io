@@ -1,126 +1,178 @@
+
 body {
-    background-color: #000; /* Arka plan rengi siyah */
-    color: #fff; /* Yazı rengi beyaz */
-    font-family: Arial, sans-serif; /* Yazı tipi */
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: rgba(18, 18, 18, 0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #00bcd4;
+}
+
+.logo span {
+    color: #ff9800;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
     margin: 0;
     padding: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00bcd4;
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(145deg, #1c1c1c, #121212);
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #00bcd4;
+}
+
+.hero p {
+    font-size: 1.2em;
+    color: #ffffff;
+}
+
+.tools {
+    padding: 40px 20px;
     text-align: center;
 }
 
-/* Container sınıfı, içeriği merkezler */
-.container {
-    max-width: 600px;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7); /* Yarı şeffaf siyah arka plan */
-    border-radius: 10px;
-}
-
-/* Başlık stil ayarları */
-h1 {
-    font-size: 2.5rem;
+.tools h2 {
+    font-size: 2em;
     margin-bottom: 20px;
 }
 
-/* Paragraf stil ayarları */
-p {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
+.tool-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
-/* Liste stil ayarları */
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin-bottom: 15px;
+.tool {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s, background 0.3s;
 }
 
-li {
-    font-size: 1.2rem;
-    margin: 5px 0;
+.tool:hover {
+    transform: translateY(-10px);
+    background: rgba(0, 188, 212, 0.2);
 }
 
-/* Sosyal medya bağlantıları */
-.social-links {
-    margin-top: 20px;
+.icon {
+    width: 90px;
+    height: 90px;
+    
+    margin-bottom: 10px;
 }
 
-/* Her bir sosyal medya öğesinin stili */
-.social-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
+.about {
+    padding: 40px 20px;
+    text-align: center;
+    background: rgba(18, 18, 18, 0.8);
+    margin: 20px 0;
+    border-radius: 10px;
 }
 
-/* Sosyal medya ikonları */
-.social-icon {
-    width: 30px; /* İkon boyutu */
-    height: 30px; /* İkon boyutu */
-    margin-right: 15px;
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1c1c1c;
+    color: #ffffff;
 }
 
-/* Kullanıcı adı stil */
-.social-username {
-    font-size: 1.2rem;
-    color: #fff;
+footer .social-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #00bcd4;
+    font-size: 1.5em;
 }
 
-/* Bağlantı hover efekti */
-.social-item:hover .social-username {
-    text-decoration: underline;
+footer .social-links a:hover {
+    color: #ff9800;
 }
 
 a {
-    color: white;
     text-decoration: none;
-    font-weight: bold;
 }
 
-/* Yılbaşı efekti */
-.snowflake {
-    position: absolute;
-    font-size: 1em;
-    user-select: none;
-    z-index: 1000;
-    pointer-events: none;
-    animation: fall 3s linear infinite forwards;
+.btn_go {
+    background-color: #000000;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 2px solid white;
+  }
+  
+.btn_go:hover {
+    background-color: #333333;
+  }
+
+#video {
+    border: 1px solid white;
+    width: 560px;
+    height: 315px;
+    margin-top: 20px;
 }
 
-@keyframes fall {
-    0% {
-        transform: translateY(0) rotate(0deg);
-    }
-    100% {
-        transform: translateY(100vh) rotate(360deg);
-    }
+input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid white;
+    background-color: black;
+    color: white;
 }
 
-/* Kutuların üstünde kar birikimi */
-.tool-grid {
-    position: relative;
+button {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    cursor: pointer;
 }
-
-.tool-grid::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.5));
-    background-size: 100% 200px;
-    background-position: 0% 100%;
-    animation: snow 10s linear infinite;
-}
-
-@keyframes snow {
-    0% {
-        background-position: 0% 100%;
-    }
-    100% {
-        background-position: 0% 0%;
-    }
+button:hover {
+    background-color: white;
+    color: black;
 }
