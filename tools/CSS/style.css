@@ -1,10 +1,38 @@
 
 body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
     margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #121212;
-    color: #ffffff;
-    line-height: 1.6;
+    padding: 0;
+    overflow: hidden;
+}
+
+.snowflake {
+    position: fixed;
+    top: 0;
+    color: white;
+    opacity: 0.8;
+    pointer-events: none; /* Tıklanamaz */
+    animation: fall linear infinite, sway ease-in-out infinite;
+}
+
+@keyframes fall {
+    from {
+        transform: translateY(-10vh);
+    }
+    to {
+        transform: translateY(110vh);
+    }
+}
+
+@keyframes sway {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(15px);
+    }
 }
 
 header {
@@ -74,18 +102,38 @@ nav ul li a:hover {
     margin-bottom: 20px;
 }
 
-/* Kutuların üstüne kar birikimi efekti */
-.tool-grid .tool {
-    position: relative;
-    overflow: hidden; /* Kar birikimlerinin dışarı taşmasını engeller */
-    background: linear-gradient(to bottom, white 5%, rgba(255, 255, 255, 0) 100%);
-    background-size: 100% 100%; /* Kar birikim görselini doğru boyutlandırır */
-    transition: background-size 2s ease; /* Yavaşça boyut değişikliği animasyonu */
+.tool-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
+.tool {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.1); /* Hafif şeffaf arka plan */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    overflow: hidden; /* İçerik taşmasını önler */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
 
-.tool-grid .tool:hover {
-    background-size: 100% 80%; /* Hover sırasında kar birikimini artırır */
+.tool::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to bottom, white, transparent);
+    z-index: 1; /* Öne çıkar */
+    pointer-events: none;
+}
+
+.tool:hover {
+    transform: translateY(-10px);
+    background: rgba(0, 188, 212, 0.2);
 }
 
 .icon {
@@ -170,30 +218,4 @@ button {
 button:hover {
     background-color: white;
     color: black;
-}
-
-/* Kar taneleri için */
-.snowflake {
-    position: fixed;
-    top: 0;
-    left: 0;
-    color: white;
-    pointer-events: none;
-    user-select: none;
-    animation: fall linear infinite;
-}
-
-
-
-
-/* Kar taneleri animasyonu */
-@keyframes fall {
-    0% {
-        transform: translateY(-100px);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(100vh);
-        opacity: 0.5;
-    }
 }
